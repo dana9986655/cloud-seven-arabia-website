@@ -1,0 +1,71 @@
+// Basic Protection
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+const translations = {
+  en:{ nav_about:"About", nav_services:"Services", nav_projects:"Projects", nav_contact:"Contact",
+  hero_title:"Building a More Efficient Engineering Future in Saudi Arabia",
+  hero_subtitle:"Comprehensive engineering and contracting solutions",
+  about_title:"About Us",
+  about_text:"Cloud Seven is a Saudi engineering company.",
+  services_title:"Our Services",
+  s1:"General Contracting", s2:"Engineering Solutions",
+  s3:"Project Management", s4:"Maintenance & Operations",
+  projects_title:"Our Projects",
+  projects_text:"Selected projects across Saudi Arabia.",
+  contact_title:"Contact Us",
+  send:"Send",
+  name:"Name", email:"Email", message:"Message" },
+
+  ar:{ nav_about:"من نحن", nav_services:"خدماتنا", nav_projects:"مشاريعنا", nav_contact:"تواصل معنا",
+  hero_title:"نحو مستقبل هندسي أكثر كفاءة في المملكة",
+  hero_subtitle:"حلول هندسية متكاملة",
+  about_title:"من نحن",
+  about_text:"كلاود سيفن شركة سعودية هندسية.",
+  services_title:"خدماتنا",
+  s1:"المقاولات العامة", s2:"الحلول الهندسية",
+  s3:"إدارة المشاريع", s4:"الصيانة والتشغيل",
+  projects_title:"مشاريعنا",
+  projects_text:"نماذج من مشاريعنا.",
+  contact_title:"تواصل معنا",
+  send:"إرسال",
+  name:"الاسم", email:"البريد الإلكتروني", message:"الرسالة" },
+
+  hi:{ nav_about:"हमारे बारे में", nav_services:"सेवाएं", nav_projects:"परियोजनाएं", nav_contact:"संपर्क",
+  hero_title:"बेहतर इंजीनियरिंग भविष्य का निर्माण",
+  hero_subtitle:"समग्र इंजीनियरिंग समाधान",
+  about_title:"हमारे बारे में",
+  about_text:"Cloud Seven एक इंजीनियरिंग कंपनी है।",
+  services_title:"हमारी सेवाएं",
+  s1:"जनरल कॉन्ट्रैक्टिंग", s2:"इंजीनियरिंग समाधान",
+  s3:"परियोजना प्रबंधन", s4:"रखरखाव",
+  projects_title:"परियोजनाएं",
+  projects_text:"चयनित परियोजनाएं।",
+  contact_title:"संपर्क करें",
+  send:"भेजें",
+  name:"नाम", email:"ईमेल", message:"संदेश" }
+};
+
+const switcher=document.getElementById("langSwitcher");
+
+function setLanguage(lang){
+ document.documentElement.lang=lang;
+ document.body.dir=lang==="ar"?"rtl":"ltr";
+
+ document.querySelectorAll("[data-key]").forEach(el=>{
+   el.textContent=translations[lang]?.[el.dataset.key]||"";
+ });
+
+ document.querySelectorAll("[data-key-placeholder]").forEach(el=>{
+   el.placeholder=translations[lang]?.[el.dataset.keyPlaceholder]||"";
+ });
+
+ localStorage.setItem("siteLang",lang);
+}
+
+const savedLang=localStorage.getItem("siteLang")||"en";
+switcher.value=savedLang;
+setLanguage(savedLang);
+
+switcher.addEventListener("change",e=>{
+ setLanguage(e.target.value);
+});
