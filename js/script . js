@@ -68,4 +68,5 @@ setLanguage(savedLang);
 
 switcher.addEventListener("change",e=>{
  setLanguage(e.target.value);
+
 });
