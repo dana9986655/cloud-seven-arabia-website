@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cloud Seven Trading & Contracting</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Security Headers Backup -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="no-referrer">
+
+<!-- SEO -->
+<meta name="description" content="Cloud Seven Engineering & Contracting Company Saudi Arabia">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+<div class="container nav">
+<div class="logo">Cloud Seven</div>
+
+<nav>
+<a href="#about" data-key="nav_about">About</a>
+<a href="#services" data-key="nav_services">Services</a>
+<a href="#projects" data-key="nav_projects">Projects</a>
+<a href="#contact" data-key="nav_contact">Contact</a>
+
+<select id="langSwitcher" class="lang-select">
+<option value="en">EN</option>
+<option value="ar">AR</option>
+<option value="hi">HI</option>
+</select>
+</nav>
+</div>
+</header>
+
+<section class="hero" style="background-image:url('images/hero.jpg')">
+<div class="overlay"></div>
+<div class="hero-content container">
+<h1 data-key="hero_title"></h1>
+<p data-key="hero_subtitle"></p>
+</div>
+</section>
+
+<section id="about" class="section container">
+<h2 data-key="about_title"></h2>
+<p data-key="about_text"></p>
+</section>
+
+<section id="services" class="section gray">
+<div class="container">
+<h2 data-key="services_title"></h2>
+<ul class="services-list">
+<li data-key="s1"></li>
+<li data-key="s2"></li>
+<li data-key="s3"></li>
+<li data-key="s4"></li>
+</ul>
+</div>
+</section>
+
+<section id="projects" class="section container">
+<h2 data-key="projects_title"></h2>
+<p data-key="projects_text"></p>
+</section>
+
+<section id="contact" class="section gray">
+<div class="container">
+<h2 data-key="contact_title"></h2>
+
+<form action="https://formspree.io/f/xxxxabcd" method="POST">
+<input type="text" name="name" data-key-placeholder="name" required>
+<input type="email" name="email" data-key-placeholder="email" required>
+<textarea name="message" data-key-placeholder="message"></textarea>
+<button type="submit" class="btn" data-key="send"></button>
+</form>
+
+</div>
+</section>
+
+<footer class="footer">
+© Cloud Seven – Saudi Arabia
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
